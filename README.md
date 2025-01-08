@@ -1,0 +1,2 @@
+# beadandok
+IKT PROJEKTMUNKA
