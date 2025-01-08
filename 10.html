@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Szökőév</title>
+</head>
+<body>
+    <input id="ev" type="number" placeholder="Írd be az évszámot">
+    <button onclick="szamolj()">Ellenőrzés</button>
+    <p id="eredmeny"></p>
+
+    <script>
+        function szamolj() {
+            let ev = +document.getElementById("ev").value;
+            let szokoev = (ev % 4 === 0 && (ev % 100 !== 0 || ev % 400 === 0));
+            document.getElementById("eredmeny").innerText = szokoev ? "Szökőév" : "Nem szökőév";
+        }
+    </script>
+</body>
+</html>
