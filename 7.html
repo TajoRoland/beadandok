@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Négyzetgyök számítás</title>
+</head>
+<body>
+    <h1>Négyzetgyök kalkulátor</h1>
+    <input id="szam" type="number" placeholder="Írj be egy számot!">
+    <button onclick="szamolj()">Számolj</button>
+    <p id="eredmeny"></p>
+
+    <script>
+        function szamolj() {
+            let szam = document.getElementById("szam").value;
+            let gyok = Math.sqrt(szam);
+            document.getElementById("eredmeny").innerText = "A négyzetgyök: " + gyok;
+        }
+    </script>
+</body>
+</html>
