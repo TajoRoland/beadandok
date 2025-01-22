@@ -2,19 +2,43 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Négyzetgyök számítás</title>
+    <title>PAPIR</title>
 </head>
+<style>
+    body
+    {
+        text-align: center;
+        margin: auto;
+    }
+</style>
 <body>
-    <h1>Négyzetgyök kalkulátor</h1>
-    <input id="szam" type="number" placeholder="Írj be egy számot!">
+    <!--
+    Adott egy 40cm X 50cm-es papírlap. A program kérjen be két kisebb méretet, és határozza meg, hogy hány darab ilyen kisebb méretű lapot lehet kivágni a nagy lapból.
+    Számoljátok ki ugyanezt, ha a kis lapot elforgatjátok (az oldalak megcserélésével).
+    Például 4X5-ös lapból 100-at lehet kivágni, de ha elforgatjuk 5X4-esre, akkor csak 96-ot.
+    -->
+    <h1>Papírlapok</h1>
+    <label for="magassag"></label>
+    <input type="number" name="" id="magassag">
+    <label for="hosszusag"></label>
+    <input type="number" name="" id="hosszusag">
     <button onclick="szamolj()">Számolj</button>
     <p id="eredmeny"></p>
 
     <script>
         function szamolj() {
-            let szam = document.getElementById("szam").value;
-            let gyok = Math.sqrt(szam);
-            document.getElementById("eredmeny").innerText = "A négyzetgyök: " + gyok;
+        let Oldalmagassag = 40;
+        let Oldalhosszusag = 50;
+        let magassag = document.getElementById("magassag").value;
+        let hosszusag = document.getElementById("hosszusag").value;
+
+
+        let forgasNelkulSzamitas = Math.floor(Oldalmagassag / magassag) * Math.floor(Oldalhosszusag / hosszusag);
+
+        let forgassalSzamitas = Math.floor(Oldalmagassag / hosszusag) * Math.floor(Oldalhosszusag / magassag);
+
+        document.getElementById("eredmeny").innerHTML = `Forgatás nélkül: ${forgasNelkulSzamitas}<br> 
+        Forgatással: ${forgassalSzamitas}`
         }
     </script>
 </body>
